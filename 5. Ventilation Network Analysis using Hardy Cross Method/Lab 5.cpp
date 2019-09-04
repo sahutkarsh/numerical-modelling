@@ -57,7 +57,6 @@ int main()
 	float dq0=1, dq1=1, dq2=1;
 	do
 	{
-		cout<<dq0<<endl;
 		dq0 = delta_q(dir_ar0, size, 0, q);
 		dq1 = delta_q(dir_ar1, size, 1, q);
 		dq2 = delta_q(dir_ar2, size, 2, q);
@@ -68,10 +67,5 @@ int main()
 			q[dir_ar2[i]] = q[dir_ar2[i]] + sign[dir_ar2[i]][2]*dq2;
 		}
 	}while(abs(dq0)>0.001 && abs(dq1)>0.001 && abs(dq2)>0.001);
-	cout<<endl<<endl<<endl;
-	for(int i=0; i<total_branch; i++)
-	{
-		cout<<"air in branch "<<i <<"is "<<q[i]<<endl;
-	}
-			
+	for(int i=0; i<total_branch; i++) cout << "Branch: " << i << ": " << q[i] << " (m3/s)" << endl;
 }
